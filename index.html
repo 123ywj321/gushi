@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5000km下的最美中国——318公路游览</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 主标题 -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-route"></i> 5000km下的最美中国</h1>
+            <p>318公路游览 · 从东海之滨到世界屋脊的壮美征程</p>
+        </div>
+        <button class="header-toggle" id="headerToggle">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </header>
+
+    <!-- 侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-map-marked-alt"></i> 最美中国·景点探索</h3>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索景点...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="route-progress">
+                <h4>路线进度</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">0% 完成</p>
+            </div>
+            <div class="poi-list" id="poiList">
+                <!-- 景点列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- 地图容器 -->
+    <div id="map" class="map-container"></div>
+
+    <!-- 景点详情弹窗 -->
+    <div class="poi-modal" id="poiModal">
+        <div class="poi-modal-content">
+            <span class="poi-modal-close" id="modalClose">&times;</span>
+            <div class="poi-modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="poi-modal-meta">
+                    <span class="poi-type" id="modalType"></span>
+                    <span class="poi-distance" id="modalDistance"></span>
+                </div>
+            </div>
+            <div class="poi-modal-body">
+                <div class="poi-images" id="modalImages">
+                    <!-- 图片轮播 -->
+                </div>
+                <div class="poi-description" id="modalDescription">
+                    <!-- 景点描述 -->
+                </div>
+                <div class="poi-tips" id="modalTips">
+                    <!-- 旅游贴士 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 控制面板 -->
+    <div class="control-panel">
+        <button class="control-btn" id="routeBtn" title="显示/隐藏路线">
+            <i class="fas fa-route"></i>
+        </button>
+        <button class="control-btn" id="layerBtn" title="切换图层">
+            <i class="fas fa-layer-group"></i>
+        </button>
+        <button class="control-btn" id="fullscreenBtn" title="全屏">
+            <i class="fas fa-expand"></i>
+        </button>
+        <button class="control-btn" id="infoBtn" title="关于">
+            <i class="fas fa-info"></i>
+        </button>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>正在加载最美中国318公路游览...</p>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- 主要脚本 -->
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
